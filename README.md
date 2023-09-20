@@ -1,5 +1,14 @@
 # Barrier
 
+키보드 마우스 공유 프로그램
+
+Barrier는 과거에는 하나의 키보드와 마우스로 여러 대의 컴퓨터를 제어하기 위해 상자에 있는 다이얼을 물리적으로 돌려서 제어 중인 컴퓨터를 전환할 수 있었던 KVM 스위치의 기능을 모방한 소프트웨어입니다. 
+
+Barrier는 이 기능을 소프트웨어에서 수행하므로 마우스를 화면 가장자리로 이동하거나 키 프레스를 사용하여 다른 시스템으로 초점을 전환하여 제어할 컴퓨터를 지정할 수 있습니다.
+
+![barrier](./barrier.png)
+
+
 Eliminate the barrier between your machines.
 Find [releases for windows and macOS here](https://github.com/debauchee/barrier/releases).
 Your distro probably already has barrier packaged for it, see [distro specific packages](#distro-specific-packages)
