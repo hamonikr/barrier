@@ -3,3 +3,14 @@
 %:
 	dh $@ --buildsystem=cmake --builddirectory=build -Pbuild/debian --parallel
 
+override_dh_auto_test:
+
+override_dh_usrlocal:
+
+override_dh_auto_configure:
+	git submodule update --init --recursive
+	dh_auto_configure
+	
+override_dh_clean:
+	dh_clean
+	rm -rf debian/barrier
