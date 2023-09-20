@@ -4,6 +4,7 @@ Priority: optional
 Standards-Version: 3.9.7
 Homepage: https://github.com/debauchee/barrier/
 Maintainer: Debauchee Open Source Group <todo@mail.com>
+Build-Depends: debhelper (>= 9), libcurl4-openssl-dev, libavahi-compat-libdnssd-dev
 
 Package: barrier
 Architecture: amd64
