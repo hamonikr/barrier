@@ -1,36 +1,31 @@
 Source: barrier
-Section: utils
+Section: x11
 Priority: optional
 Standards-Version: 3.9.7
 Homepage: https://github.com/debauchee/barrier/
 Maintainer: Debauchee Open Source Group <todo@mail.com>
 Build-Depends: debhelper (>= 9), 
-               libcurl4-openssl-dev, 
-               libavahi-compat-libdnssd-dev,
-               libssl-dev,
-               gcc-12,
-               g++-12,
-               clang-14,
-               libc++-dev,
-               libc++abi-dev,
-               libstdc++-12-dev,
-               build-essential,
-               cmake,
-               libx11-dev,
-               libxext-dev,
-               libxtst-dev,
-               libxi-dev,
-               libxrandr-dev,
-               libxinerama-dev,
-               libxkbfile-dev,
-               libavahi-compat-libdns_sd-dev
+                cmake,
+                libavahi-compat-libdnssd-dev,
+                libcurl4-openssl-dev | libcurl-dev,
+                libgtest-dev <!nocheck>,
+                libgmock-dev <!nocheck>,
+                libice-dev,
+                libsm-dev,
+                libssl-dev,
+                libxi-dev,
+                libxinerama-dev,
+                libxrandr-dev,
+                libxtst-dev,
+                qtbase5-dev,
+                xauth <!nocheck>,
+                xvfb <!nocheck>,
 
 Package: barrier
 Architecture: amd64
 Section: utils
 Priority: optional
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, openssl
 Description: Keyboard and mouse sharing solution
  Barrier allows you to share one mouse and keyboard between multiple computers.
  Work seamlessly across Windows, macOS and Linux.
