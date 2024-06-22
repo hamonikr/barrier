@@ -1,9 +1,9 @@
-barrier (2.3.3+hamonikr2) stable; urgency=medium
+barrier (2.4.0+hamonikr1) stable; urgency=medium
 
   [Kevin Kim]
-  * Release for Ubuntu 22.04
+  * Release for Ubuntu 24.04
 
- -- HamoniKR <pkg@hamonikr.org>  Wed, 20 Sep 2023 16:29:06 +0900
+ -- HamoniKR <pkg@hamonikr.org>  Sat, 22 Jun 2024 09:42:05 +0900
 
 barrier (2.3.3+hamonikr1) kumkang; urgency=medium
 
