@@ -13,6 +13,14 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Install build dependencies from debian/control
+        run: |
+          # Extract build dependencies from debian/control
+          build_deps=$(grep -Po 'Build-Depends:\s*\K.*' debian/control | tr -d '\n' | sed 's/,/\n/g' | awk '{print $1}')
+          sudo apt-get update
+          sudo apt-get install -y devscripts git equivs debhelper build-essential
+          sudo apt-get install -y $build_deps
+
       - name: Build Debian Package
         uses: jtdor/build-deb-action@v1
         env:
@@ -22,7 +30,7 @@ jobs:
           buildpackage-opts: --build=binary --no-sign
           # When change deb package name as git rev id
           # before-build-hook: debchange --controlmaint --local="+ci${{ github.run_id }}~git$(git rev-parse --short HEAD)" "CI build"
-          extra-build-deps: devscripts git equivs debhelper build-essential libcurl4-openssl-dev libavahi-compat-libdnssd-dev libssl-dev gcc-12 g++-12 clang-14 libc++-dev libc++abi-dev libstdc++-12-dev cmake libx11-dev libxext-dev libxtst-dev libxi-dev libxrandr-dev libxinerama-dev libxkbfile-dev libavahi-compat-libdns_sd-dev
+          # extra-build-deps: devscripts git equivs debhelper build-essential libcurl4-openssl-dev libavahi-compat-libdnssd-dev libssl-dev gcc-12 g++-12 clang-14 libc++-dev libc++abi-dev libstdc++-12-dev cmake libx11-dev libxext-dev libxtst-dev libxi-dev libxrandr-dev libxinerama-dev libxkbfile-dev libavahi-compat-libdns_sd-dev
           host-arch: amd64
           artifacts-dir: debian/artifacts
 
