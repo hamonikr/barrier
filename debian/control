@@ -22,7 +22,7 @@ Build-Depends: debhelper (>= 9),
                 xvfb <!nocheck>,
 
 Package: barrier
-Architecture: amd64
+Architecture: all
 Section: utils
 Priority: optional
 Depends: ${misc:Depends}, ${shlibs:Depends}, openssl
