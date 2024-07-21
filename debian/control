@@ -25,7 +25,7 @@ Package: barrier
 Architecture: all
 Section: utils
 Priority: optional
-Depends: ${misc:Depends}, ${shlibs:Depends}, openssl
+Depends: ${misc:Depends}, ${shlibs:Depends}, openssl, libavahi-compat-libdnssd1
 Description: Keyboard and mouse sharing solution
  Barrier allows you to share one mouse and keyboard between multiple computers.
  Work seamlessly across Windows, macOS and Linux.
